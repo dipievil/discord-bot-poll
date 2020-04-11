@@ -3,17 +3,13 @@ const bot = new Discord.Client();
 const embed = new Discord.MessageEmbed();
 
 require('dotenv').config();
-console.log(process.env);
 
-const token = 'Njk4MTkxMzMzODE4NDk5MDkz.XpII2w.ZQLwOhLzxBKJDJlN3gbiWdO8NqA';
-const envtoken = process.env.DISCORD_APP_KEY;
-console.log(envtoken);
-
+const token = process.env.DISCORD_APP_KEY;
 
 const PREFIX = "p!";
 
 bot.on('ready',() =>{
-    console.log(`Bot online: ${bot.user.tag} em ${bot.channels.size} canais.`);
+    console.log(`Bot online: ${bot.user.tag}.`);
 });
 
 bot.on('message', message =>{
