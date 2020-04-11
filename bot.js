@@ -2,7 +2,13 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const embed = new Discord.MessageEmbed();
 
+require('dotenv').config();
+console.log(process.env);
+
 const token = 'Njk4MTkxMzMzODE4NDk5MDkz.XpII2w.ZQLwOhLzxBKJDJlN3gbiWdO8NqA';
+const envtoken = process.env.DISCORD_APP_KEY;
+console.log(envtoken);
+
 
 const PREFIX = "p!";
 
