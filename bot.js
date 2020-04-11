@@ -2,16 +2,17 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const embed = new Discord.MessageEmbed();
 
-const token = 'Njk4MTkxMzMzODE4NDk5MDkz.XpHtjw.pw05ghVGDAlaaMd9LWyPNwTkNP4';
+const token = 'Njk4MTkxMzMzODE4NDk5MDkz.XpII2w.ZQLwOhLzxBKJDJlN3gbiWdO8NqA';
 
 const PREFIX = "p!";
 
 bot.on('ready',() =>{
-    console.log(`Bot online: ${bot.user.tag}.`);
+    console.log(`Bot online: ${bot.user.tag} em ${bot.channels.size} canais.`);
 });
 
 bot.on('message', message =>{
 
+    console.log(message.content.indexOf(PREFIX));
     if(message.content.indexOf(PREFIX) !== 0) 
         return;
 
@@ -19,7 +20,11 @@ bot.on('message', message =>{
 
     switch(args[0]){
 
-        case "poll":
+        case "sobre":
+        case"about":
+              message.channel.send("Este é um bot de avaliação. Versão 1.0");
+        break;
+        case "avaliar":
             embed
             .setColor(0xFFC300)
             .setTitle("Bot de Avaliação")
