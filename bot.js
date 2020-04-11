@@ -22,7 +22,7 @@ bot.on('message', message =>{
 
         case "sobre":
         case"about":
-              message.channel.send("Este é um bot de avaliação. Versão 1.0");
+              message.channel.send("Este é um bot de avaliação. Versão 1.1");
         break;
         case "avaliar":
             embed
