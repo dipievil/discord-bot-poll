@@ -1,13 +1,11 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const embed = new Discord.MessageEmbed();
+const { version } = require('./package.json');
 
 require('dotenv').config();
 
-console.log(process.env.DISCORD_APP_KEY);
-
 const token = process.env.DISCORD_APP_KEY;
-
 const PREFIX = "p!";
 
 bot.on('ready',() =>{
@@ -16,7 +14,6 @@ bot.on('ready',() =>{
 
 bot.on('message', message =>{
 
-    console.log(message.content.indexOf(PREFIX));
     if(message.content.indexOf(PREFIX) !== 0) 
         return;
 
@@ -26,13 +23,14 @@ bot.on('message', message =>{
 
         case "sobre":
         case"about":
-              message.channel.send("Este é um bot de avaliação. Versão 1.1");
+            console.log(process.env);
+              message.channel.send("Este é um bot de avaliação. Versão "+version);
         break;
         case "avaliar":
             embed
             .setColor(0xFFC300)
             .setTitle("Bot de Avaliação")
-            .setDescription("Digite `p!poll PERGUNTA` para iniciar uma votação");
+            .setDescription("Digite `p!poll PERGUNTA` para iniciar uma avaliação");
 
             if(!args[1]){
                 message.channel.send(embed);
@@ -41,7 +39,7 @@ bot.on('message', message =>{
 
             let msgArgs = args.slice(1).join(" ");
 
-            message.channel.send('📜' + " **"+msgArgs+"** (clique na reação para votar!)").then(messageReaction => {
+            message.channel.send('📜' + " **"+msgArgs+"** (clique na reação para avaliar!)").then(messageReaction => {
                     messageReaction.react("👍");
                     messageReaction.react("👌");
                     messageReaction.react("👎");
