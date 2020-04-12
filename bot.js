@@ -4,7 +4,7 @@ const embed = new Discord.MessageEmbed();
 
 require('dotenv').config();
 
-console.log(process.env);
+console.log(process.env.DISCORD_APP_KEY);
 
 const token = process.env.DISCORD_APP_KEY;
 
