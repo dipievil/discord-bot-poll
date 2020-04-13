@@ -1,6 +1,6 @@
 {
   "name": "discord-bot",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "description": "Bot do discord",
   "main": "bot.js",
   "scripts": {
@@ -10,6 +10,11 @@
   "author": "Dipi",
   "license": "Apache License",
   "dependencies": {
-    "discord.js": "^12.1.1"
+    "discord.js": "^12.1.1",
+    "dotenv": "^8.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dipievil/discord-bot-poll.git"
   }
 }
